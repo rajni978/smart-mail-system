@@ -1,0 +1,203 @@
+.compose-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.compose-header {
+  margin-bottom: 16px;
+}
+
+.compose-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin: 0 0 4px 0;
+  letter-spacing: -0.4px;
+}
+
+.compose-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.compose-form {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.compose-form-header {
+  padding: 12px 20px;
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.compose-field {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.compose-field-body {
+  align-items: start;
+  border-bottom: none;
+  padding-top: 14px;
+}
+
+.compose-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.compose-input,
+.compose-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--text-h);
+  background: transparent;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.compose-input:hover,
+.compose-textarea:hover {
+  background: var(--bg);
+}
+
+.compose-input:focus,
+.compose-textarea:focus {
+  outline: none;
+  border-color: var(--accent-border);
+  background: var(--bg-elevated);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+.compose-input::placeholder,
+.compose-textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.8;
+}
+
+.compose-input:disabled,
+.compose-textarea:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.compose-textarea {
+  resize: vertical;
+  min-height: 260px;
+  line-height: 1.6;
+}
+
+.compose-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+.compose-send {
+  padding: 11px 28px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.compose-send:hover:not(:disabled) {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.compose-send:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.compose-discard {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.compose-discard:hover:not(:disabled) {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border-color: var(--danger-border);
+}
+
+.compose-discard:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.compose-alert {
+  margin: 12px 20px 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  border: 1px solid;
+}
+
+.compose-alert-error {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border-color: var(--danger-border);
+}
+
+.compose-alert-success {
+  background: var(--success-bg);
+  color: var(--success);
+  border-color: var(--success-border);
+}
+
+@media (max-width: 768px) {
+  .compose-field {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 12px 16px;
+  }
+
+  .compose-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  .compose-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    padding: 14px 16px;
+  }
+
+  .compose-send, .compose-discard { width: 100%; text-align: center; }
+  .compose-alert { margin: 12px 16px 0; }
+}
